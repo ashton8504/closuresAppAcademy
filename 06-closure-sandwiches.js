@@ -18,8 +18,21 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 
 function sandwichMaker() {
-  // Your code here
+  let ingredients = ["tomato"];
+
+  function makeSandwich(ingredient) {
+    ingredients.push(ingredient);
+    return "One sandwich with " + ingredients.join(" and ");
+  }
+
+  return makeSandwich; // return the function object, rather than calling it
 }
+
+let sandwich = sandwichMaker(); // sandwich now holds the function object returned by sandwichMaker()
+
+console.log(sandwich("spinach")); // => "One sandwich with tomato and spinach"
+console.log(sandwich("jelly")); // => "One sandwich with tomato and spinach and jelly"
+console.log(sandwich("bread")); // => "One sandwich with tomato and spinach and jelly and bread"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
