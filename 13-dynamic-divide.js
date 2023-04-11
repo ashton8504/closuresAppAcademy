@@ -20,8 +20,15 @@ divideByFive(50); // returns 10
 
 function dynamicDivide(divisor) {
   // Your code here
+  console.log(divisor, "divisor");
+  return function (num) {
+    console.log(num, "num");
+    return num / divisor;
+  };
 }
 
+const halfer = dynamicDivide(2); // returns a function
+console.log(halfer(20)); // returns 10
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = dynamicDivide;

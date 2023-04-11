@@ -23,9 +23,21 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
-function recVolume(height) {
-  // Your code here
-}
+let recVolume = height => {
+  return function (width) {
+    return function (length) {
+      return height * width * length;
+    };
+  };
+};
+
+let table1 = recVolume(5); // returns a function
+let table2 = table1(4); // returns a function
+let volume = table2(3); // calculates volume (height = 5, width = 4, length = 3)
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
+console.log(volume); // prints 60
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
